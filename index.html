@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>RipassApp</title>
+
+
+</head>
+
+<body>
+
+  <h1>RipassApp</h1>
+
+  <div class="card">
+    <div class="question">Cos’è una rete informatica?</div>
+    <button class="toggle" onclick="toggleAnswer(this)" aria-expanded="false">
+      <span class="text">Mostra risposta</span>
+      <span class="icon">▼</span>
+    </button>
+    <div class="answer">
+      Una rete informatica è un insieme di dispositivi collegati tra loro
+      per condividere dati e risorse.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="question">Qual è la differenza tra LAN e WAN?</div>
+    <button class="toggle" onclick="toggleAnswer(this)" aria-expanded="false">
+      <span class="text">Mostra risposta</span>
+      <span class="icon">▼</span>
+    </button>
+    <div class="answer">
+      La LAN copre un’area limitata (casa, scuola),
+      mentre la WAN copre grandi distanze (Internet).
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="question">Cos’è un indirizzo IP?</div>
+    <button class="toggle" onclick="toggleAnswer(this)" aria-expanded="false">
+      <span class="text">Mostra risposta</span>
+      <span class="icon">▼</span>
+    </button>
+    <div class="answer">
+      È un numero che identifica in modo univoco un dispositivo
+      all’interno di una rete.
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer(button) {
+      const answer = button.nextElementSibling;
+      const text = button.querySelector(".text");
+      const icon = button.querySelector(".icon");
+
+      const isOpen = answer.classList.contains("open");
+
+      answer.classList.toggle("open");
+      icon.classList.toggle("rotate");
+      button.setAttribute("aria-expanded", !isOpen);
+
+      text.textContent = isOpen ? "Mostra risposta" : "Nascondi risposta";
+    }
+  </script>
+
+</body>
+</html>
+
+
